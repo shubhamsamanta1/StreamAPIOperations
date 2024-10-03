@@ -69,7 +69,7 @@ public class StreamMethods {
 
         System.out.println("-----------------------------------------------------");
 
-        List<Integer> lst1 = List.of(5,6,8,4,1,8,9);
+        List<Integer> lst1 = List.of(5,6,8,4,9,8,-2);
         System.out.println(lst1.stream().min((a,b) -> a.compareTo(b)).get());
 
         System.out.println("-----------------------------------------------------");
@@ -85,6 +85,25 @@ public class StreamMethods {
         System.out.println(lst1.stream().max((a,b) -> a.compareTo(b)).get());
 
 
+        System.out.println("-----------------------------------------------------");
+
+        System.out.println(lst1.stream().reduce(10, (a,b) -> a.compareTo(b)));
+
+        System.out.println("-----------------------------------------------------");
+
+        System.out.println(lst1.stream().reduce(0, Integer::max));
+
+        System.out.println("-----------------------------------------------------");
+
+        System.out.println(lst1.stream().reduce(0, (a,b) -> a+b));
+
+        System.out.println("-----------------------------------------------------");
+
+        System.out.println(lst1.stream().reduce(0, Integer::min));
+
+        System.out.println("-----------------------------------------------------");
+
+        System.out.println(lst1.stream().reduce(10, Integer::compareTo));
 
 
     }
